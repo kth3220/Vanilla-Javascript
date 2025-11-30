@@ -1,6 +1,7 @@
+import { ForbiddenError } from "./error/ForbiddenError.js";
 import { NotFoundPage } from "./page/NotFoundPage.js";
 import { router } from "./router.js";
-import { addEvent, registerGlobalEvents } from "./util/eventUtils.js";
+import { addEvent } from "./util/eventUtils.js";
 
 addEvent("click", "[data-link]", (e) => {
   e.preventDefault();
@@ -15,7 +16,9 @@ export const render = () => {
 
     $root.innerHTML = Page();
   } catch (e) {
-    console.log(e);
+    if (e instanceof ForbiddenError) {
+      router.get().push("/");
+      return;
+    }
   }
-  registerGlobalEvents();
 };
