@@ -9,4 +9,8 @@ export const globalStore = createStore({
     { id: 2, name: "김철수", userId: "chulsoo", password: "1234" },
     { id: 3, name: "이영희", userId: "younghee", password: "1234" },
   ],
+
+  posts: [],
+  filteredPosts: null,
+  searchQuery: "",
 });

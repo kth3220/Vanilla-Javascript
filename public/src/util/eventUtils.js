@@ -1,5 +1,5 @@
 const eventHandlers = {};
-const handleGlobalEvents = (e) => {
+const handleGlobalEvents = e => {
   const handlers = eventHandlers[e.type];
   if (!handlers) return;
 
@@ -16,7 +16,7 @@ export const registerGlobalEvents = (() => {
   return () => {
     if (flag) return;
 
-    Object.keys(eventHandlers).forEach((eventType) => {
+    Object.keys(eventHandlers).forEach(eventType => {
       document.body.addEventListener(eventType, handleGlobalEvents);
     });
     flag = true;

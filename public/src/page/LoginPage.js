@@ -1,4 +1,3 @@
-import { router } from "../router.js";
 import { userStorage } from "../storages/userStorage.js";
 import { globalStore } from "../stores/globalStore.js";
 import { addEvent } from "../util/eventUtils.js";
@@ -52,9 +51,7 @@ export const LoginPage = () => {
 
 const login = ({ userId, password }) => {
   const { users } = globalStore.getState();
-  const user = users.find(
-    (e) => e.userId === userId && e.password === password
-  );
+  const user = users.find(e => e.userId === userId && e.password === password); //(e.userId 가변, userId(고정))
   if (user) {
     const userData = {
       id: user.id,
@@ -62,7 +59,7 @@ const login = ({ userId, password }) => {
       name: user.name,
     };
     globalStore.setState({
-      userData,
+      user: userData,
       isLoggedIn: true,
     });
     userStorage.set(userData);
@@ -72,12 +69,12 @@ const login = ({ userId, password }) => {
   }
 };
 
-addEvent("submit", "#login-form", (e) => {
+addEvent("submit", "#login-form", e => {
   e.preventDefault();
   const userId = document.getElementById("userId").value;
   const password = document.getElementById("password").value;
   if (login({ userId, password })) {
-    router.get().push("/");
+    alert("로그인에 성공했습니다.");
   } else {
     alert("아이디 또는 비밀번호가 올바르지 않습니다.");
   }

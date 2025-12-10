@@ -3,7 +3,7 @@ import { NotFoundPage } from "./page/NotFoundPage.js";
 import { router } from "./router.js";
 import { addEvent } from "./util/eventUtils.js";
 
-addEvent("click", "[data-link]", (e) => {
+addEvent("click", "[data-link]", e => {
   e.preventDefault();
   router.get().push(e.target.href.replace(window.location.origin, ""));
 });
@@ -13,6 +13,7 @@ export const render = () => {
 
   try {
     const Page = router.get().getTarget() ?? NotFoundPage;
+    console.log(router.get().getTarget());
 
     $root.innerHTML = Page();
   } catch (e) {
@@ -20,5 +21,6 @@ export const render = () => {
       router.get().push("/");
       return;
     }
+    console.log(e);
   }
 };
