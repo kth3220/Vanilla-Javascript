@@ -1,24 +1,41 @@
 {
   "name": "vanilla-javascript",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Vanilla JS로 React 만들기",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ParkYongHo1/Vanilla-Javascript.git"
+    "url": "git+https://github.com/kth3220/Vanilla-Javascript.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "vanilla-js",
+    "react",
+    "spa"
+  ],
+  "author": "KimTaeHee",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/ParkYongHo1/Vanilla-Javascript/issues"
+    "url": "https://github.com/kth3220/Vanilla-Javascript/issues"
   },
-  "homepage": "https://github.com/ParkYongHo1/Vanilla-Javascript#readme",
+  "homepage": "https://github.com/kth3220/Vanilla-Javascript#readme",
+  "devDependencies": {
+    "vite": "^6.4.1"
+  },
+  "main": "vite.config.js",
   "dependencies": {
-    "express": "^5.1.0"
+    "esbuild": "^0.25.12",
+    "fdir": "^6.5.0",
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.3",
+    "postcss": "^8.5.6",
+    "rollup": "^4.53.3",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.15"
   }
 }

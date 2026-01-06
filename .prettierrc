@@ -1,0 +1,8 @@
+{
+  "printWidth": 200,
+  "htmlWhitespaceSensitivity": "ignore",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "arrowParens": "avoid",
+  "proseWrap": "never"
+}
