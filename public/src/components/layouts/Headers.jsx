@@ -22,7 +22,8 @@ const NavItem = ({ isLoggedIn }) => {
     const { user } = globalStore.getState();
     return (
       <div>
-        <span class="text-gray-600">👋 ${user.name}</span>
+        <span class="text-gray-600">👋 {user.name} </span>
+        {"   "}
         <button onClick={handleLogout} class="text-gray-500 hover:text-gray-700">
           로그아웃
         </button>

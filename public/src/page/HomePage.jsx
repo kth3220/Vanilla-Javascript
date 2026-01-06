@@ -11,7 +11,7 @@ export const HomePage = () => {
   const { isLoggedIn } = globalStore.getState();
   return (
     <div class="min-h-screen bg-gray-50">
-      <Headers />
+      <Headers isLoggedIn={isLoggedIn} />
       <main class="max-w-6xl mx-auto px-4 py-8">
         <PostHeaders />
         <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
